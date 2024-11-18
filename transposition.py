@@ -29,7 +29,9 @@ long_df['occurrenceID'] = long_df.apply(
 # Додаємо префікс до кожного значення в стовпці 'eventID'
 long_df['eventID'] = 'Askaniia_Nova_' + long_df['eventID'].astype(str)
 
-)
+# Додаємо префікс до кожного значення в стовпці 'eventID'
+long_df['occurrenceID'] = 'Askaniia_Nova_' + long_df['occurrenceID'].astype(str)
+
 # Додаємо нову колонку 'basisOfRecord' з постійним значенням 'HumanObservation' та ін.
 long_df['basisOfRecord'] = 'HumanObservation'
 
