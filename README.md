@@ -1,7 +1,7 @@
 # Transformation of relevés into Long Data Format Using Python Programming Language in development environment Pycharm
 
 # Description
-Script for PyСharm (Python) and R (as RMarkdown) for obtaining and visualizing satellite derived spectral reflectance data for transforming relevés into Long Data Format following Darwin Core standards for publishing event-dataset in the Global Biodiversity Information Facility (GBIF).
+Script for PyСharm (Python) for transforming relevés into Long Data Format following Darwin Core standards for publishing event-dataset in the Global Biodiversity Information Facility (GBIF).
 
 # Requirements
 PyCharm
