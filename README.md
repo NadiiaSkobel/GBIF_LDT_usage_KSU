@@ -9,7 +9,7 @@ Libraries:
 pandas
 
 # Outputs
-Long Data Format Dataset following Darwin Core standards for publishing datasets in the Global Biodiversity Information Facility (GBIF)
+Long Data Format Dataset following Darwin Core standards for publishing in the Global Biodiversity Information Facility (GBIF)
 
 # Input example
 ![image](https://github.com/user-attachments/assets/415b5b91-d440-4bd2-b1dd-885b8e989fc3)
@@ -17,6 +17,6 @@ Long Data Format Dataset following Darwin Core standards for publishing datasets
 # Output example
 ![image](https://github.com/user-attachments/assets/20375187-46bf-4f8e-85fa-8eb28c3e2997)
 
-This project was created to automate the processing of Releve research data. If you have any questions or suggestions, please reach out through skobel2015@gmail.com
+This project was created to automate the processing of Relevé research data. If you have any questions or suggestions, please reach out through skobel2015@gmail.com
 
 # Refence
