@@ -1,39 +1,20 @@
-import pandas as pd
+#Transformation of relevés into Long Data Format Using Python Programming Language in development environment Pycharm
 
-# Завантажте таблицю
-file_path = 'askaniia.xlsx'  # Вкажіть шлях до вашого Excel-файлу
+#Description
+Scripts for PyСharm (Python) and R (as RMarkdown) for obtaining and visualizing satellite derived spectral reflectance data for transforming relevés into Long Data Format following Darwin Core standards for publishing event-dataset in the Global Biodiversity Information Facility (GBIF).
 
-# Завантаження даних, враховуючи, що заголовки починаються з 10-го рядка
-df = pd.read_excel(file_path, header=10)
 
-# Перетворення даних у формат long
-long_df = (
-    df.melt(id_vars=df.columns[0],  # Ідентифікаційні змінні - перший стовпець
-            var_name='eventID',
-            value_name='organismQuantity')
-    .dropna(subset=['organismQuantity'])  # Залишаємо лише непорожні комірки в колонці 'organismQuantity'
-)
 
-# Перетворення стовпця 'eventID' у рядковий тип
-long_df['eventID'] = long_df['eventID'].astype(str)
+#Requirements
+PyCharm
 
-# Видаляємо суфікси типу .1, .2 тощо з колонок дат у 'eventID'
-long_df['eventID'] = long_df['eventID'].str.replace(r'\.\d+$', '', regex=True)
+#Outputs
+Long Data Format Dataset following Darwin Core standards for publishing datasets in the Global Biodiversity Information Facility (GBIF)
 
-# Додаємо унікальні ідентифікатори 'occurrenceID' для кожного eventID
-long_df['occurrenceID'] = long_df.groupby('eventID').cumcount() + 1
-long_df['occurrenceID'] = long_df.apply(
-    lambda x: f"{x['eventID']}_{x['occurrenceID']:03}", axis=1
-)
+Input example
+![image](https://github.com/user-attachments/assets/415b5b91-d440-4bd2-b1dd-885b8e989fc3)
 
-# Додаємо префікс до кожного значення в стовпці 'eventID'
-long_df['eventID'] = 'Askaniia_Nova_' + long_df['eventID'].astype(str)
+Output example
+![image](https://github.com/user-attachments/assets/20375187-46bf-4f8e-85fa-8eb28c3e2997)
 
-# Додаємо префікс до кожного значення в стовпці 'eventID'
-long_df['occurrenceID'] = 'Askaniia_Nova_' + long_df['occurrenceID'].astype(str)
-
-# Додаємо нову колонку 'basisOfRecord' з постійним значенням 'HumanObservation' та ін.
-long_df['basisOfRecord'] = 'HumanObservation'
-
-# Зберігаємо у новий файл або виводимо результат
-long_df.to_csv('long_data_format.csv', index=False)
+#References
